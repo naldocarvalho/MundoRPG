@@ -56,7 +56,7 @@ function gerarPersonagem() {
       classe: aplicarPascalCase(classePesquisada),
       habilidades: classe.habilidades,
       proficiências: classe.proficiências,
-      caracteristica: classe.características,
+      caracteristica: classe.caracteristicas,
       background: classe.background,
       atributos: {
         forca,

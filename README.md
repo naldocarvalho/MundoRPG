@@ -16,10 +16,14 @@ O Mundo RPG é uma plataforma web que permite a criação de fichas de personage
 
 ## Exemplos de alguns prompts utilizados durante o desenvolvimento
 
-* **Prompt 1:** Gere código para criação da Plataforma de Criação de Personagens para RPG. 
-* **Prompt 2:** Crie mais atributos das classes seguindo padrão D&D.
-* **Prompt 3:** De acordo as regras de distribuição de pontos iniciais altere nosso código para que os valores aleatórios dos atributos respeitem a regra de 27 pontos
-* **Prompt 4:** Gostaria de criar uma função que pesquisa se o objeto tem uma propriedade de acordo com a string informada como parametro substring
+* **Prompt 1:** *Gere código para criação da Plataforma de Criação de Personagens para RPG.*
+* **Prompt 2:** *Crie mais atributos das classes seguindo padrão D&D.*
+* **Prompt 3:** *De acordo as regras de distribuição de pontos iniciais altere nosso código para que os valores aleatórios dos atributos respeitem a regra de 27 pontos*
+* **Prompt 4:** *Gostaria de criar uma função que pesquise se o objeto tem uma propriedade de acordo com a string informada como parametro substring*
+* **Prompt 5:** *Gostaria de uma função para que fizesse a composição do nome e seguisse o modelo: "Aragorn, o Rei Eterno", sendo essa estrutura composta por:  Nome, Titulo (de acordo com a classe do personagem)
+
+Mostrar rascunhos
+*
 
 ## Como Contribuir
 

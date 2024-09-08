@@ -7,7 +7,7 @@ O Mundo RPG é uma plataforma web que permite a criação de fichas de personage
 
 ## Versão Online
 
-[Acesse](https://mundo-rpg.vercel.app/)
+[https://mundo-rpg.vercel.app/](https://mundo-rpg.vercel.app/)
 
 ## Tecnologias Utilizadas
 

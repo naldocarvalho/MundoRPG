@@ -82,7 +82,7 @@ const classes = {
         imagens: ["maga_humana.png"]
       }
     },
-    tags: ["mago", "maga"]
+    tags: ["mago", "maga", "mage"]
   },
   sacerdote: {
     habilidades: ["Sabedoria", "Carisma"],
@@ -267,7 +267,7 @@ const classes = {
         imagens: ["ladra_warforged.png"],
       }
     },
-    tags: ["ladrao", "ladra"]
+    tags: ["ladrão","ladrao", "ladra", "thief"]
   },
   druida: {
     habilidades: ["Sabedoria", "Destreza"],
@@ -487,7 +487,7 @@ const classes = {
         imagens: ["dancarina_shifter.png"]
       }
     },
-    tags: ["dancarina", "dancer"]
+    tags: ["dançarina", "dancarina", "dancer"]
   },
   paladino: {
     habilidades: ["Força", "Carisma"],
@@ -584,6 +584,6 @@ const classes = {
         imagens: ["cacadora_gensasi.png"]
       }
     },
-    tags: ["cacador", "cacadora", "hunter"]
+    tags: ["caçador", "caçadora", "cacador", "cacadora", "hunter"]
   },
 };

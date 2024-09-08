@@ -1,6 +1,17 @@
+/**
+ * Gera um objeto representando um personagem para um jogo de RPG.
+ *
+ * @returns {object} Um objeto com as propriedades do personagem gerado.
+ *   As propriedades podem incluir:
+ *   - nome: O nome do personagem.
+ *   - classe: A classe do personagem.
+ *   - atributos: Um objeto contendo os atributos do personagem (e.g., força, agilidade, inteligência).
+ *   - background: A historia do personagem.
+ */
 function gerarPersonagem() {
   console.log("iniciando a geração de personagem");
 
+  // input com classe desejada para criação da ficha do personagem
   const pesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
   const section = document.getElementById("resultados-pesquisa");
 
@@ -18,7 +29,6 @@ function gerarPersonagem() {
 
   const classe = classes[classePesquisada];
   const generos = ["masculino", "feminino"];
-
 
   // Lógica para gerar atributos aleatórios com base na raça e classe
   const pontosTotais = 27; // Valor padrão, pode ser customizado
@@ -42,8 +52,6 @@ function gerarPersonagem() {
   if (classe) {
 
     console.log("montando personagem");
-
-    //cardPersonagem.innerHTML = ""; // Limpa os resultados anteriores
 
     // Calcula os pontos de vida iniciais
     const pontosDeVida = classe.pontosDeVida(1, modificadores.constituicao); // Assumindo nível 1
@@ -93,12 +101,25 @@ function gerarPersonagem() {
   section.innerHTML = cardPersonagem;
 }
 
+/**
+ * Calcula o custo de aumentar o valor de um atributo, considerando o valor atual. 
+ * @param {number} valorAtual - O valor atual do atributo.
+ * @returns {number} O custo para aumentar o valor em 1.
+ */
 function calcularCusto(valor) {
   // Tabela de custos simplificada (ajuste conforme necessário)
   const custos = [0, 1, 2, 3, 4, 5, 7, 9];
   return custos[valor - 8];
 }
 
+/**
+ * Distribui aleatoriamente um número total de pontos entre 6 atributos, 
+ * garantindo que cada atributo tenha no mínimo 8 pontos e no máximo 15. 
+ * O custo de cada ponto adicional é calculado pela função `calcularCusto` (não implementada).
+ *
+ * @param {number} pontosTotais - O número total de pontos a serem distribuídos.
+ * @returns {number[]} Um array com os valores finais de cada atributo após a distribuição.
+ */
 function distribuirPontos(pontosTotais) {
   console.log("distribuindo pontos");
 
@@ -124,10 +145,26 @@ function distribuirPontos(pontosTotais) {
   return atributos;
 }
 
+/**
+ * Calcula o modificador para um dado valor, comumente utilizado em sistemas de RPG para determinar bônus ou penalidades em atributos.
+ *
+ * @param {number} valor - O valor base do atributo para o qual se deseja calcular o modificador.
+ * @returns {number} O modificador calculado, que pode ser positivo, negativo ou zero.
+ */
 function calcularModificador(valor) {
   return Math.floor((valor - 10) / 2);
 }
 
+/**
+ * Obtém uma imagem aleatória de um personagem, baseado em sua classe e gênero.
+ *
+ * Esta função busca no array de gêneros da classe fornecida o sexo específico e, em seguida,
+ * seleciona aleatoriamente uma imagem dentre as opções disponíveis para aquele gênero.
+ *
+ * @param {Object} classe - Objeto representando a classe do personagem, contendo um array de gêneros.
+ * @param {string} sexo - String representando o sexo do personagem.
+ * @returns {string} A URL da imagem aleatória selecionada.
+ */
 function obterImagemAleatoria(classe, sexo) {
   console.log(`obtendo imagem da ${classe}`);
   
@@ -145,6 +182,16 @@ function obterImagemAleatoria(classe, sexo) {
   return imagem;
 }
 
+/**
+ * Gera um nome completo aleatório para um personagem, baseado em sua classe e sexo.
+ *
+ * Esta função seleciona aleatoriamente um nome e um título de um conjunto de opções
+ * disponíveis para o gênero especificado na classe do personagem.
+ *
+ * @param {Object} classe - Objeto representando a classe do personagem, contendo um array de gêneros.
+ * @param {string} sexo - String representando o sexo do personagem.
+ * @returns {string} O nome completo gerado aleatoriamente, no formato "nome, título".
+ */
 function gerarNomeCompleto(classe, sexo) {
   console.log(`gerando nome completo do personagam de sexo ${sexo}`);
 
@@ -162,6 +209,18 @@ function gerarNomeCompleto(classe, sexo) {
   return `${nome}, ${titulo}`;
 }
 
+/**
+ * Converte uma string para o formato PascalCase.
+ *
+ * O PascalCase consiste em escrever cada palavra com a primeira letra em maiúscula,
+ * sem espaços entre as palavras.
+ *
+ * **Exemplo:**
+ *   aplicarPascalCase('minha frase exemplo') -> 'MinhaFraseExemplo'
+ *
+ * @param {string} texto - A string a ser convertida para PascalCase.
+ * @returns {string} A string convertida para PascalCase.
+ */
 function aplicarPascalCase(texto) {
   // Remover caracteres especiais e espaços extras
   const textoLimpo = texto.replace(/[^a-zA-Z0-9]+/g, " ");
@@ -177,6 +236,15 @@ function aplicarPascalCase(texto) {
   return pascalCase;
 }
 
+/**
+ * Busca por uma propriedade em um objeto, verificando se ela possui uma propriedade `tags`
+ * que contém uma determinada substring.
+ *
+ * @param {Object} objeto - O objeto a ser percorrido.
+ * @param {string} substring - A substring a ser encontrada nas tags das propriedades.
+ * @returns {string|null} O nome da propriedade encontrada, caso a substring seja encontrada em alguma tag,
+ *                      ou null caso contrário.
+ */
 function classeExiste(objeto, substring) {
   for (const propriedade in objeto) {
     // Verifica se a propriedade é um objeto e possui a propriedade 'tags'

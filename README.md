@@ -12,6 +12,14 @@ O Mundo RPG é uma plataforma web que permite a criação de fichas de personage
 ## Tecnologias Utilizadas
 
 * **Front-end:** HTML, CSS, JavaScript
+* **Prompts:** Google Gemini
+
+## Exemplos de alguns prompts utilizados durante o desenvolvimento
+
+* **Prompt 1:** Gere código para criação da Plataforma de Criação de Personagens para RPG. 
+* **Prompt 2:** Crie mais atributos das classes seguindo padrão D&D.
+* **Prompt 3:** De acordo as regras de distribuição de pontos iniciais altere nosso código para que os valores aleatórios dos atributos respeitem a regra de 27 pontos
+* **Prompt 4:** Gostaria de criar uma função que pesquisa se o objeto tem uma propriedade de acordo com a string informada como parametro substring
 
 ## Como Contribuir
 
